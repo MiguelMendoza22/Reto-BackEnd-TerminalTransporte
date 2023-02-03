@@ -2,14 +2,18 @@ package com.co.sofka.appterminaltransporte.services;
 
 import com.co.sofka.appterminaltransporte.models.Autobus;
 import com.co.sofka.appterminaltransporte.models.Destino;
+import com.co.sofka.appterminaltransporte.models.Viaje;
 import com.co.sofka.appterminaltransporte.repositories.SistemaDeTransporte;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
 public class ViajeService implements IViajeService {
+
+    private Date fecha;
 
     @Autowired
     private SistemaDeTransporte sistemaDeTransporte;
@@ -37,4 +41,16 @@ public class ViajeService implements IViajeService {
          this.sistemaDeTransporte.agregarAutobus(autobusNuevo);
         return autobusNuevo;
     }
+
+    @Override
+    public List<Viaje> obtenerViaje() {
+        return sistemaDeTransporte.getViajes();
+    }
+
+    @Override
+    public Viaje registrarViaje(Viaje viaje) {
+        return null;
+    }
+
+
 }

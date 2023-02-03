@@ -2,6 +2,7 @@ package com.co.sofka.appterminaltransporte.repositories;
 
 import com.co.sofka.appterminaltransporte.models.Autobus;
 import com.co.sofka.appterminaltransporte.models.Destino;
+import com.co.sofka.appterminaltransporte.models.Viaje;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -13,6 +14,7 @@ public class SistemaDeTransporte {
 
     public List<Autobus> autobusesList;
     public List<Destino> destinosList;
+    public List<Viaje> viajeList;
 
     private int id = 1;
 
@@ -45,6 +47,10 @@ public class SistemaDeTransporte {
         this.id++;
         destinosList.add(destino);
     }
+    public Autobus buscarAutobusPorId(int id) {
+        List<Autobus> autobuses = getAutobuses();
+        return autobuses.stream().filter(autobus -> autobus.getId() == id).findFirst().orElse(null);
+    }
 
     public void mostrarDestino() {
         destinosList.stream().forEach(destino -> System.out.println(destino.getNombre()));
@@ -54,4 +60,30 @@ public class SistemaDeTransporte {
         this.mostrarDestino();
         return destinosList;
     }
+    public Destino buscarDestinoPorId(int id) {
+        List<Destino> destinos = getDestinos();
+        return destinos.stream().filter(destino -> destino.getId() == id).findFirst().orElse(null);
+    }
+
+
+
+    public Viaje agregarViaje(Viaje viaje) {
+        viaje.setId(this.id);
+        this.id++;
+        viajeList.add(viaje);
+        return viaje;
+    }
+
+    public void mostrarViaje() {
+        viajeList.stream().forEach(viaje -> System.out.println("Viaje a: " + viaje.getDestino() + " " + viaje.getHorario() + " " + viaje.getAutobus()));
+    }
+
+    public List<Viaje> getViajes() {
+        this.mostrarViaje();
+        return viajeList;
+    }
+
+
+
+
 }
