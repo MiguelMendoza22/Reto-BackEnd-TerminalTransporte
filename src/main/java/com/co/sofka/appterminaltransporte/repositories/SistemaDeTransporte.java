@@ -1,12 +1,14 @@
-package com.co.sofka.appterminaltransporte.services;
+package com.co.sofka.appterminaltransporte.repositories;
 
-import org.springframework.stereotype.Service;
+import com.co.sofka.appterminaltransporte.models.Autobus;
+import com.co.sofka.appterminaltransporte.models.Destino;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
-
+@Repository
 public class SistemaDeTransporte {
 
     public List<Autobus> autobusesList;
@@ -25,6 +27,7 @@ public class SistemaDeTransporte {
         autobusesList.add(autobus);
     }
 
+
     public void autobusesConPuestosVacios() {
         AtomicInteger indice = new AtomicInteger(1);
         autobusesList.stream().filter(autobus -> autobus.getCapacidad() > 0)
@@ -32,9 +35,19 @@ public class SistemaDeTransporte {
                         + " - puestos disponibles: " + autobus.getCapacidad()));
     }
 
+    public List<Autobus> getAutobuses() {
+        this.autobusesConPuestosVacios();
+        return autobusesList;
+    }
+
+
     public void agregarDestino(Destino destino) {
         destino.setId(this.id);
         this.id++;
         destinosList.add(destino);
+    }
+
+    public void mostrarDestino() {
+        destinosList.stream().forEach(destino -> System.out.println(destino.getNombre()));
     }
 }

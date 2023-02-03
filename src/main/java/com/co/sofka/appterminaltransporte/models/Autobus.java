@@ -1,4 +1,7 @@
-package com.co.sofka.appterminaltransporte.services;
+package com.co.sofka.appterminaltransporte.models;
+
+import org.springframework.stereotype.Component;
+
 
 public class Autobus {
     private int id;
@@ -6,19 +9,10 @@ public class Autobus {
     private String modelo;
     private int capacidad;
 
-    public Autobus(int id, String marca, String modelo, int capacidad) {
-        this.id = id;
+    public Autobus(String marca, String modelo, int capacidad) {
         this.marca = marca;
         this.modelo = modelo;
         this.capacidad = capacidad;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getMarca() {
@@ -44,4 +38,13 @@ public class Autobus {
     public void setCapacidad(int capacidad) {
         this.capacidad = capacidad;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
 }

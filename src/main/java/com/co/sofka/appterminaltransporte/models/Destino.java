@@ -1,4 +1,4 @@
-package com.co.sofka.appterminaltransporte.services;
+package com.co.sofka.appterminaltransporte.models;
 
 import java.util.UUID;
 
@@ -6,8 +6,7 @@ public class Destino {
     private int id;
     private String nombre;
 
-    public Destino(int id, String nombre) {
-        this.id = id;
+    public Destino(String nombre) {
         this.nombre = nombre;
     }
 
