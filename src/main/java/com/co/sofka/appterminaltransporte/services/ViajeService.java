@@ -16,11 +16,13 @@ public class ViajeService implements IViajeService {
 
     @Override
     public List<Destino> obtenerDestino() {
-        return null;
+        return sistemaDeTransporte.getDestinos();
     }
     @Override
     public Destino registrarDestino(Destino destino) {
-        return null;
+        Destino nuevoDestino = new Destino(destino.getNombre());
+        this.sistemaDeTransporte.agregarDestino(nuevoDestino);
+        return nuevoDestino;
     }
 
 

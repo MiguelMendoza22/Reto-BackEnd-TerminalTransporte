@@ -9,18 +9,32 @@
 >3. Ejecute los rutas para los metodos HTTP usando Postman.
 
 ### Metodos HTTP
-### Registrar buses
+
+### Buses
+#### Registrar buses
 `POST:` `localhost:8080/viaje/registrarautobus`
 
 ```json
     {    
-     "marca": "peugeot",    
-     "modelo": "abc456",    
-     "capacidad": 20  
+     "marca": "String",    
+     "modelo": "String",    
+     "capacidad": 10  
     }
 ```
 #### Mostrar Lista de buses
 `GET:` `localhost:8080/viaje/mostrarbuses`
+
+### Destinos
+### Registrar Destinos
+`POST:` `localhost:8080/viaje/registrardestino`
+
+```json
+    {    
+     "nombre": "String"
+    }
+```
+#### Mostrar Lista de destinos
+`GET:` `localhost:8080/viaje/mostrardestino`
 
 
 ### Estructura del proyecto

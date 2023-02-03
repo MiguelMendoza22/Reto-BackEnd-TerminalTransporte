@@ -6,6 +6,9 @@ public class Destino {
     private int id;
     private String nombre;
 
+    public Destino() {
+    }
+
     public Destino(String nombre) {
         this.nombre = nombre;
     }

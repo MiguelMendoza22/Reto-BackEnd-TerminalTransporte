@@ -40,7 +40,6 @@ public class SistemaDeTransporte {
         return autobusesList;
     }
 
-
     public void agregarDestino(Destino destino) {
         destino.setId(this.id);
         this.id++;
@@ -49,5 +48,10 @@ public class SistemaDeTransporte {
 
     public void mostrarDestino() {
         destinosList.stream().forEach(destino -> System.out.println(destino.getNombre()));
+    }
+
+    public List<Destino> getDestinos() {
+        this.mostrarDestino();
+        return destinosList;
     }
 }
