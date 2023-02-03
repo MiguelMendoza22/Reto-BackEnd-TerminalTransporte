@@ -36,7 +36,7 @@
 #### Mostrar Lista de destinos
 `GET:` `localhost:8080/viaje/mostrardestino`
 
-### Viajes (Pendiente aun no funciona)
+### Viajes 
 `POST:` `localhost:8080/viaje//registrarviaje/{idDestino}/{idBus}`
 ```json
     {    

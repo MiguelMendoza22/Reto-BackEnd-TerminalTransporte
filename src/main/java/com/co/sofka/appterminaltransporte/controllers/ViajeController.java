@@ -45,12 +45,10 @@ public class ViajeController {
 
     @GetMapping("/mostrarviaje")
     public ResponseEntity mostrarViaje() {
-        return new ResponseEntity(viajeService.obtenerViaje(), HttpStatus.FOUND);
+        List<Viaje> viajes = viajeService.obtenerViaje();
+        return new ResponseEntity(viajes, HttpStatus.FOUND);
     }
-    @PostMapping("/registrarViaje")
-    public ResponseEntity registrarViaje(@RequestBody Viaje viaje) {
-        return new ResponseEntity(viajeService.registrarViaje(viaje), HttpStatus.CREATED);
-    }
+
 
     @PostMapping("/registrarviaje/{idDestino}/{idBus}")
     public ResponseEntity registrarViaje(@PathVariable("idDestino") int idDestino,
