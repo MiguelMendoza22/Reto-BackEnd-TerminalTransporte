@@ -58,6 +58,15 @@
 #### Mostrar Lista de usuarios
 `GET:` `localhost:8080/usuario/mostrarusuarios`
 
+#### Ingresar Usarios al bus (No lo pude completar 😞)
+
+`POST:` `localhost:8080/usuario/usuariosporviajes/{idViaje}"`
+```json
+    {    
+     "nombre": "String"
+    }
+```
+
 ### Estructura del proyecto
 - Moldels: se guardan las clases que representaciones de nuestros modelo de datos (Entidades)
 - Controllers: Clases donde estan todos los endpoints que tiene nuestra aplicación.

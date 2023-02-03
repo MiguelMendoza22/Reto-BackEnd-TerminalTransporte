@@ -2,6 +2,7 @@ package com.co.sofka.appterminaltransporte.repositories;
 
 import com.co.sofka.appterminaltransporte.models.Autobus;
 import com.co.sofka.appterminaltransporte.models.Destino;
+import com.co.sofka.appterminaltransporte.models.Usuario;
 import com.co.sofka.appterminaltransporte.models.Viaje;
 import org.springframework.stereotype.Repository;
 
@@ -15,6 +16,7 @@ public class SistemaDeTransporte {
     public List<Autobus> autobusesList;
     public List<Destino> destinosList;
     public List<Viaje> viajeList;
+    public List<Usuario> usuarios;
 
     private int id = 1;
 
@@ -22,6 +24,7 @@ public class SistemaDeTransporte {
         this.autobusesList = new ArrayList<>();
         this.destinosList = new ArrayList<>();
         this.viajeList = new ArrayList<>();
+        this.usuarios = new ArrayList<>();
     }
 
     public void agregarAutobus(Autobus autobus) {
@@ -86,7 +89,15 @@ public class SistemaDeTransporte {
         return viajeList;
     }
 
+    public Viaje ingresarUsuario(int idViaje, Usuario usuario) {
+        Viaje viaje = this.viajeList.stream().filter(viaje1 -> viaje1.getId() == idViaje).findFirst().orElse(null);
+        if (viaje != null && viaje.getAutobus() != null) {
+            viaje.getAutobus().ingresarUsuario(usuario);
+        }
+        return viaje;
+    }
 
-
-
+    public Viaje ingresaralviaje (int idViaje, Usuario usuario) {
+        return  ingresarUsuario(idViaje,usuario);
+    }
 }

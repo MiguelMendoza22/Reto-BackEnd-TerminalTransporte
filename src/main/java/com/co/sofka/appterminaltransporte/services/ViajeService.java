@@ -2,6 +2,7 @@ package com.co.sofka.appterminaltransporte.services;
 
 import com.co.sofka.appterminaltransporte.models.Autobus;
 import com.co.sofka.appterminaltransporte.models.Destino;
+import com.co.sofka.appterminaltransporte.models.Usuario;
 import com.co.sofka.appterminaltransporte.models.Viaje;
 import com.co.sofka.appterminaltransporte.repositories.SistemaDeTransporte;
 import org.springframework.beans.factory.annotation.Autowired;
