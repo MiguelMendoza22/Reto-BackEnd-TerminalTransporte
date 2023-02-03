@@ -36,5 +36,20 @@
 #### Mostrar Lista de destinos
 `GET:` `localhost:8080/viaje/mostrardestino`
 
+### Viajes (Pendiente aun no funciona)
+`POST:` `localhost:8080/viaje//registrarviaje/{idDestino}/{idBus}`
+```json
+    {    
+     "horario": "String"
+    }
+```
 
 ### Estructura del proyecto
+- Moldels: se guardan las clases que representaciones de nuestros modelo de datos (Entidades)
+- Controllers: Clases donde estan todos los endpoints que tiene nuestra aplicación.
+- Services: Guarda la clases que manejan la funcionalidad y logica del negocio.
+- Repositories: Aunque no hay una conexión con una base de datos, se uso para guardar las clases que contienen la estructura de datos del proyecto y se encarga de llamar al modelo donde se encuentran los metodos de petición HTTP.
+
+### Patrones de diseño
+- Factory Method.
+- Prototype.

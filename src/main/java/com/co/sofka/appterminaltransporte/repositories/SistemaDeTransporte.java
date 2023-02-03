@@ -21,6 +21,7 @@ public class SistemaDeTransporte {
     public SistemaDeTransporte() {
         this.autobusesList = new ArrayList<>();
         this.destinosList = new ArrayList<>();
+        this.viajeList = new ArrayList<>();
     }
 
     public void agregarAutobus(Autobus autobus) {
