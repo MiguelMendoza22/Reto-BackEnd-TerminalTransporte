@@ -13,7 +13,6 @@ import java.util.List;
 @Service
 public class ViajeService implements IViajeService {
 
-    private Date fecha;
 
     @Autowired
     private SistemaDeTransporte sistemaDeTransporte;

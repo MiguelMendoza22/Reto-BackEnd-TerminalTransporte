@@ -42,16 +42,18 @@ public class SistemaDeTransporte {
         this.autobusesConPuestosVacios();
         return autobusesList;
     }
+    public Autobus buscarAutobusPorId(int id) {
+        List<Autobus> autobuses = getAutobuses();
+        return autobuses.stream().filter(autobus -> autobus.getId() == id).findFirst().orElse(null);
+    }
+
 
     public void agregarDestino(Destino destino) {
         destino.setId(this.id);
         this.id++;
         destinosList.add(destino);
     }
-    public Autobus buscarAutobusPorId(int id) {
-        List<Autobus> autobuses = getAutobuses();
-        return autobuses.stream().filter(autobus -> autobus.getId() == id).findFirst().orElse(null);
-    }
+
 
     public void mostrarDestino() {
         destinosList.stream().forEach(destino -> System.out.println(destino.getNombre()));

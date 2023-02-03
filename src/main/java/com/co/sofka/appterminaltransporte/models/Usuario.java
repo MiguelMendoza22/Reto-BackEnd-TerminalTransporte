@@ -3,6 +3,9 @@ package com.co.sofka.appterminaltransporte.models;
 public class Usuario extends Persona{
     private int id;
 
+    public Usuario() {
+    }
+
     public Usuario(String nombre) {
         super(nombre);
     }

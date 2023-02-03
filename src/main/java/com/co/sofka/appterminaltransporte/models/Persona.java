@@ -3,6 +3,9 @@ package com.co.sofka.appterminaltransporte.models;
 public abstract class Persona {
     private String nombre;
 
+    public Persona() {
+    }
+
     public Persona(String nombre) {
         this.nombre = nombre;
     }

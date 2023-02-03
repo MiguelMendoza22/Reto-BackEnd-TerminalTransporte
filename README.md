@@ -25,7 +25,7 @@
 `GET:` `localhost:8080/viaje/mostrarbuses`
 
 ### Destinos
-### Registrar Destinos
+#### Registrar destinos
 `POST:` `localhost:8080/viaje/registrardestino`
 
 ```json
@@ -37,12 +37,26 @@
 `GET:` `localhost:8080/viaje/mostrardestino`
 
 ### Viajes 
+#### Registrar viajes
 `POST:` `localhost:8080/viaje//registrarviaje/{idDestino}/{idBus}`
 ```json
     {    
      "horario": "String"
     }
 ```
+#### Mostrar Lista de viajes
+`GET:` `localhost:8080/viaje/mostrarviaje`
+
+### Usuarios
+#### Registrar usuarios
+`POST:` `localhost:8080/usuario/registrarusuarios`
+```json
+    {    
+     "nombre": "String"
+    }
+```
+#### Mostrar Lista de usuarios
+`GET:` `localhost:8080/usuario/mostrarusuarios`
 
 ### Estructura del proyecto
 - Moldels: se guardan las clases que representaciones de nuestros modelo de datos (Entidades)
